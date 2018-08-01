@@ -14,11 +14,6 @@ module.exports = function validateRegisterInput(data) {
     data.passwordConfirmation = !isEmpty(data.passwordConfirmation) ? data.passwordConfirmation :  '';
 
 
-
-    if(!Validator.isAlpha(data.name)){
-        errors.name = `Name must contains only letters`;
-    }
-
     if(!Validator.isLength(data.name, {min: minNameLenght, max: maxNameLenght})){
         errors.name = `Name must be between ${minNameLenght} and ${maxNameLenght} characters`;
     }
